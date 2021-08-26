@@ -172,7 +172,7 @@ jobs:
   deploy-cocoapods:
     runs-on: macos-latest
     if: github.ref == 'refs/heads/portals-dev-test'
-    timeoout-minutes: 30
+    timeout-minutes: 30
     steps:
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
       - uses: actions/setup-node@v1
