@@ -192,6 +192,6 @@ jobs:
         with:
           path: core/
       - run: npm install
-      - run: echo "version: ${{ steps.package-version.outputs.current-version }} token: ${{ secrets.COCOAPODS_TRUNK_TOKEN}}"
+      - run: echo "version: ${{ steps.package-version.outputs.current-version }} token: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}"
 
 
