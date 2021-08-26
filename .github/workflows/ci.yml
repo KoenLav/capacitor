@@ -192,7 +192,7 @@ jobs:
         with:
           path: core/
       - run: npm install
-      - run: echo "token: $COCOAPODS_TRUNK_TOKEN version: $PACKAGE_VERSION"
+      # - run: echo "token: $COCOAPODS_TRUNK_TOKEN version: $PACKAGE_VERSION"
         env:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
           PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version }}
