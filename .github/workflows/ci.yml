@@ -32,6 +32,19 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@master
         with:
           path: core/
+  get-package-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Latest
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - uses: actions/checkout@v2
+      - name: Get Package Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+        with:
+          path: core/
   # lint:
   #   runs-on: macos-latest
   #   timeout-minutes: 30
@@ -187,6 +200,8 @@ jobs:
   deploy-cocoapods:
     runs-on: macos-latest
     if: github.ref == 'refs/heads/portals-dev-test'
+    needs:
+      - get-package-version
     timeout-minutes: 30
     steps:
       - uses: actions/setup-node@v1
