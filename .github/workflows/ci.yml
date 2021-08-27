@@ -214,6 +214,8 @@ jobs:
       - name: Extract version
         id: extract_version
         uses: Saionaro/extract-package-version@v1.1.1
+        with:
+          path: core/
       # - name: Restore Dependency Cache
       #   uses: actions/cache@v1
       #   with:
